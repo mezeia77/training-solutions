@@ -31,5 +31,23 @@ public class Bank {
 
         System.out.println(account1.getInfo());
         System.out.println(account2.getInfo());
+
+        System.out.println("Első számlán összeg változtatás (+/-)?");
+        int depositAmount = scanner.nextInt();
+        account1.deposit(depositAmount);
+
+        System.out.println("Második számlán összeg változtatás (-/+)?");
+        int withdrawAmount = scanner.nextInt();
+        account2.withdraw(withdrawAmount);
+
+        System.out.println(account1.getInfo());
+        System.out.println(account2.getInfo());
+
+        System.out.println("Összeg átutalás 1 -> 2?");
+        int transferAmount = scanner.nextInt();
+        account1.transfer(account2, transferAmount);
+
+        System.out.println(account1.getInfo());
+        System.out.println(account2.getInfo());
     }
 }
