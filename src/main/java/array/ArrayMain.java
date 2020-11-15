@@ -8,6 +8,7 @@ public class ArrayMain {
         System.out.println(days.length);
 
         int[] square = new int[5];
+
         square[0] = 1;
         System.out.println(square[0]);
 
