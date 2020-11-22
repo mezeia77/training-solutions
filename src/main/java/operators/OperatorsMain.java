@@ -6,6 +6,7 @@ public class OperatorsMain {
         Operators operators = new Operators();
 
         System.out.println(operators.isEvan(9));
+        System.out.println(0333);
 
     }
 }
