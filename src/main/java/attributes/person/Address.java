@@ -7,6 +7,7 @@ public class Address {
     private String streetAndNumber;
     private String zipCode;
 
+
     public String adressToString() {
         return getCountry() + " " + getCity() + " " + getStreetAndNumber() + " " + getZipCode();
     }
