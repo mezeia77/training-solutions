@@ -15,7 +15,7 @@ public class MathOperations {
         System.out.println("A számított eredmény: " + (5*2-10/5+3));
         System.out.println("Az eredmény: " + ((5*2-10/5+3)==number));
         System.out.println("A különbség: " + (Math.abs((5*2-10/5+3))-number));
-        System.out.println((Math.abs((5*2-10/5+3))-number)<1e-4);
+        System.out.println((Math.abs((5*2-10/5+3)-number))<1e-4);
 
 
     }
