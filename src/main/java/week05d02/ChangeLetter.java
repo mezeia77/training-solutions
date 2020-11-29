@@ -11,12 +11,11 @@ public class ChangeLetter {
     private static final List<String> LETTERS= Arrays.asList("a", "e", "i", "o", "u");
 
     public String changeVowels(String text){
-        String result="";
         text=text.toLowerCase();
 
         for (int i=0; i< LETTERS.size();i++){
-            result=text.replaceAll(LETTERS.get(i), "*");
+            text=text.replaceAll(LETTERS.get(i), "*");
             }
-        return result;
+        return text;
         }
     }
