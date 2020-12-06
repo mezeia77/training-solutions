@@ -1,6 +1,5 @@
-package w06d01;
+package week06d01;
 
-import java.util.ArrayList;
 import java.util.List;
 
 public class ListSelector {
