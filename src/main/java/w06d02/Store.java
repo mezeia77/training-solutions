@@ -1,6 +1,5 @@
 package w06d02;
 
-import java.util.ArrayList;
 import java.util.List;
 
 public class Store {
@@ -12,7 +11,7 @@ public class Store {
     }
 
     public List<Product> getProducts() {
-        return new ArrayList<>(products);
+        return products;
     }
 
     public int getProductCategoryByName(Category categoryName){
