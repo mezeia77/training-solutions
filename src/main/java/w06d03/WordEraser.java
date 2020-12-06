@@ -5,6 +5,7 @@ public class WordEraser {
     public String eraseWord (String words, String word){
 
         StringBuilder sb = new StringBuilder();
+        words = words.toLowerCase();
         sb.append(words);
 
         while (words.contains(word)){

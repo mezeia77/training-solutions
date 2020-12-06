@@ -8,7 +8,7 @@ public class WordEraserTest {
 
     @Test
     public void ifWorks(){
-        System.out.println(wordEraser.eraseWord("eme eszperente nem kedvez ennek", "en"));
+        System.out.println(wordEraser.eraseWord("eme eszperente nem kedvez ENNEK mert neheztel velem", "ne"));
 
     }
 }
