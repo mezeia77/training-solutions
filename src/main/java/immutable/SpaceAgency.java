@@ -5,12 +5,12 @@ import java.util.List;
 
 public class SpaceAgency {
 
-    private List<String> tracedSatellites = new ArrayList<>();
+    private List<Satellite> tracedSatellites = new ArrayList<>();
 
     public void registerSatellite(Satellite satellite){
         if (satellite == null){
             throw new IllegalArgumentException("Null parameter!");
-        } tracedSatellites.add(toString());
+        } tracedSatellites.add(satellite);
     }
 
     public Satellite findSatelliteByRegisterIdent(String registerIdent){
