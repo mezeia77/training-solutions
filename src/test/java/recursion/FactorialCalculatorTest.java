@@ -9,6 +9,6 @@ public class FactorialCalculatorTest {
     @Test
     public void isFactorialCorrect(){
 
-        assertEquals(new FactorialCalculator().getFactorial(4), 24);
+        assertEquals(new FactorialCalculator().getFactorial(5), 120);
     }
 }

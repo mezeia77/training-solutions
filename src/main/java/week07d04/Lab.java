@@ -37,4 +37,16 @@ public class Lab {
                 ", copletedAt=" + copletedAt +
                 '}';
     }
+
+    public String getTitle() {
+        return title;
+    }
+
+    public boolean isCompleted() {
+        return completed;
+    }
+
+    public LocalDate getCopletedAt() {
+        return copletedAt;
+    }
 }
