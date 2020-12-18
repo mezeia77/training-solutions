@@ -1,6 +1,5 @@
 package classstructureattributes;
 
-import javax.sound.midi.Soundbank;
 import java.util.Scanner;
 
 public class Music {
@@ -10,15 +9,15 @@ public class Music {
         Song song = new Song();
 
         System.out.println("Band?");
-        String band = scanner.nextLine();
+        song.band = scanner.nextLine();
 
         System.out.println("Title?");
-        String title = scanner.nextLine();
+        song.title = scanner.nextLine();
 
         System.out.println("Length (min.)");
-        int lenght = scanner.nextInt();
+        song.lenght = scanner.nextInt();
 
-        System.out.println("Band: " + band + " Title: " + title + " Length: " + lenght + " min.");
+        System.out.println(song.band + " - " + song.title + " (" + song.lenght + " perc" + ")");
 
     }
 }
