@@ -20,6 +20,7 @@ public class ArrayHandler {
         return -1;
     }
 
+
     public static void main(String[] args) {
         ArrayHandler arrayHandler = new ArrayHandler();
 
