@@ -33,11 +33,12 @@ public class timeMain {
         System.out.println("A második időpont: " + hour2 + ":" + minute2 + ":" + second2);
         System.out.println(time2.getSecond() + " másodperc");
 
-        if ((hour1*3600 + minute1*60 + second1) < (hour2*3600+minute2*60 + second2)) {
+        if (time1.getSecond() < time2.getSecond()) {
             System.out.println("1. a korábbi");
         } else {
             System.out.println("2. a korábbi ");
         }
 
+        System.out.println("Az első a korábbi: " + time1.isEarlierThan(time2));
     }
 }
