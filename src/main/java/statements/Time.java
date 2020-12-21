@@ -19,8 +19,13 @@ public class Time {
     }
 
     public int getSecond() {
-        return hour * 60 + minute + second;
+        return hour * 3600 + minute*60 + second;
     }
 
+    public boolean isEarlierThan(Time other) {
+        int thisTimeInSeconds = this.getSecond();
+        int otherTimeInSeconds = other.getSecond();
+        return thisTimeInSeconds < otherTimeInSeconds;
+    }
 }
 

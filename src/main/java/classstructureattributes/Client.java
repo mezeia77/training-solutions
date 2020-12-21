@@ -1,12 +1,12 @@
 package classstructureattributes;
 
-public class client {
-    public static void main(String[] args) {
+public class Client {
+
 
         String name;
         int yearOfBirth;
         String address;
 
 
-    }
+
 }

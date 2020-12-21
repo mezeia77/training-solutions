@@ -8,9 +8,9 @@ public class DistanceMain {
 
         System.out.println(distance.getDistanceInKm() + " exact: " + distance.isExact());
 
-        /*int integerPart = (int) distance.getDistanceInKm();
+        int integerPart = (int) distance.getDistanceInKm();
 
-        System.out.println(integerPart);*/
+        System.out.println(integerPart);
 
     }
 }
