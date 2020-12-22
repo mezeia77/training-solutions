@@ -1,4 +1,4 @@
-package controlselection.greetings.accents;
+package controlselection.accents;
 
 public class WithoutAccents {
 
