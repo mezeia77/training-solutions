@@ -8,6 +8,7 @@ public class Patient {
     private String socialSecurityNumber;
     private int yearOfBirth;
 
+
     public Patient (String name, String socialSecurityNumber, int yearOfBirth){
         if (name.isEmpty()){
             throw new IllegalArgumentException("Name is empty!");
@@ -18,8 +19,8 @@ public class Patient {
         }
 
 
-        if (socialSecurityNumber.length() != 9) {
-                throw new IllegalArgumentException(socialSecurityNumber + " contains 9 numbers!");
+        if (socialSecurityNumber.length() != 9 || !SsnValidator.isValidSsn(socialSecurityNumber)) {
+                throw new IllegalArgumentException(socialSecurityNumber + " not valid SSN number!");
         }
 
 
