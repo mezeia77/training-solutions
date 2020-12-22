@@ -1,6 +1,6 @@
-package controlliteration;
+package controlliteration.pi;
 
-import controliteration.Pi;
+import controliteration.pi.Pi;
 import org.junit.jupiter.api.Test;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;
