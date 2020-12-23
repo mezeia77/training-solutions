@@ -1,4 +1,4 @@
-package stringmethods;
+package stringmethods.file;
 
 import java.util.Locale;
 
