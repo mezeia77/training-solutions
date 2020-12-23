@@ -51,7 +51,7 @@ public class UrlManager {
 
     private static String getProtocolFromUrl(String url) {
         int colonPosition = url.indexOf(":");
-        if (validateUrl(url) == false) {
+        if (!validateUrl(url)) {
             throw new IllegalArgumentException("Invalid URL!");
         }
         return url.toLowerCase().substring(0, colonPosition);
@@ -61,7 +61,7 @@ public class UrlManager {
         int thirdSlashPosition = url.indexOf("/", 8);
         int protocolHostBorderPosition = url.indexOf("://");
         int secondColonPosition = url.indexOf(":", 8);
-        if (validateUrl(url) == false) {
+        if (!validateUrl(url)) {
             throw new IllegalArgumentException("Invalid URL!");
         }
         if (secondColonPosition == -1){
@@ -84,7 +84,6 @@ public class UrlManager {
 
     private static String getPathFromUrl(String url) {
         int thirdSlashPosition = url.indexOf("/", 8);
-        //int secondColonPosition = url.indexOf(":", 8);
         int questionMarkPosition = url.indexOf("?");
         if (thirdSlashPosition == -1 || questionMarkPosition == -1){
             return "";
@@ -117,11 +116,13 @@ public class UrlManager {
 
 
 public static void main(String[] args) {
-    System.out.println("Protocol: " + getProtocolFromUrl("https://earthquake.usgs.gov/fdsnws/event/1/query?format=geojson&starttime=2014-01-01&endtime=2014-01-02"));
-    System.out.println("Host: " + getHostFromUrl("https://earthquake.usgs.gov/fdsnws/event/1/query?format=geojson&starttime=2014-01-01&endtime=2014-01-02"));
-    System.out.println("Path: " + getPathFromUrl("https://earthquake.usgs.gov/fdsnws/event/1/query?format=geojson&starttime=2014-01-01&endtime=2014-01-02"));
-    System.out.println("Query: " + getQueryFromUrl("https://earthquake.usgs.gov/fdsnws/event/1/query?format=geojson&starttime=2014-01-01&endtime=2014-01-02"));
-    System.out.println("Port: " + getPortFromUrl("https://earthquake.usgs.gov:50/fdsnws/event/1/query?format=geojson&starttime=2014-01-01&endtime=2014-01-02"));
+        String url = "https://earthquake.usgs.gov/fdsnws/event/1/query?format=geojson&starttime=2014-01-01&endtime=2014-01-02";
+
+    System.out.println("Protocol: " + getProtocolFromUrl(url));
+    System.out.println("Host: " + getHostFromUrl(url));
+    System.out.println("Path: " + getPathFromUrl(url));
+    System.out.println("Query: " + getQueryFromUrl(url));
+    System.out.println("Port: " + getPortFromUrl(url));
     }
 
 }
