@@ -1,6 +1,4 @@
-package stringmethods;
-
-import java.util.Locale;
+package stringmethods.filename;
 
 public class FileNameManipulator {
 
