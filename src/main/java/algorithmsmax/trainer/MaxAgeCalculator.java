@@ -4,13 +4,13 @@ import java.util.List;
 
 public class MaxAgeCalculator {
 
-    public int trainerWithMaxAge(List<Trainer> trainers){
-        int age = Integer.MIN_VALUE;
+    public Trainer trainerWithMaxAge(List<Trainer> trainers){
+        Trainer trainerWithMaxAge = null;
         for (Trainer trainer: trainers){
-            if (trainer.getAge() > age){
-                age = trainer.getAge();
+            if (trainerWithMaxAge == null || trainer.getAge() > trainerWithMaxAge.getAge()){
+                trainerWithMaxAge  = trainer;
             }
-        } return age;
+        } return trainerWithMaxAge;
 
     }
 

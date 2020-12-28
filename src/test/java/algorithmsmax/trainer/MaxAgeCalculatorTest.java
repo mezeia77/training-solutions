@@ -17,6 +17,6 @@ public class MaxAgeCalculatorTest {
                 new Trainer("Jyll Doe", 28)
         );
         //MaxAgeCalculator maxAgeCalculator = new MaxAgeCalculator();
-        assertEquals( new MaxAgeCalculator().trainerWithMaxAge(trainers), 52);
+        assertEquals( new MaxAgeCalculator().trainerWithMaxAge(trainers).getName(), "John Doe");
     }
 }
