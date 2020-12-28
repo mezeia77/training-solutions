@@ -1,6 +1,8 @@
-package stringmethods;
+package stringmethods.filename;
 
+import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.Test;
+import stringmethods.FileNameManipulator;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;
 
@@ -10,7 +12,7 @@ public class FileNameManipulatorTest {
 
     public void identifyFilesByExtension() {
 
-        assertEquals(new FileNameManipulator().findFileExtension("List.txt"), ".txt");
+        Assertions.assertEquals(new FileNameManipulator().findFileExtension("List.txt"), ".txt");
     }
 
     @Test
