@@ -1,4 +1,4 @@
-package controliteration;
+package controliteration.pi;
 
 public class Pi {
 
