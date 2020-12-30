@@ -1,8 +1,8 @@
-package methodoverloading;
+package methodoverloading.time;
 
 import org.junit.jupiter.api.Test;
 
-import static org.junit.jupiter.api.Assertions.assertEquals;
+import static org.junit.jupiter.api.Assertions.*;
 
 public class TimeTest {
 
@@ -54,8 +54,8 @@ public class TimeTest {
         //Given
         Time time = new Time(13, 14, 15);
         //Then
-        assertEquals(time.isEqual(13, 14, 15), true);
-        assertEquals(time.isEqual(15, 10, 10), false);
+        assertTrue(time.isEqual(13, 14, 15));
+        assertFalse(time.isEqual(15, 10, 10));
     }
 
     @Test
@@ -65,8 +65,8 @@ public class TimeTest {
         Time anotherTime = new Time(13, 14, 15);
         Time laterTime = new Time(14, 14, 15);
         //Then
-        assertEquals(time.isEqual(anotherTime), true);
-        assertEquals(time.isEqual(laterTime), false);
+        assertTrue(time.isEqual(anotherTime));
+        assertFalse(time.isEqual(laterTime));
     }
 
     @Test
@@ -74,8 +74,8 @@ public class TimeTest {
         //Given
         Time time = new Time(13, 14, 15);
         //Then
-        assertEquals(time.isEarlier(15, 10, 10),true);
-        assertEquals(time.isEarlier(10, 10, 10), false);
+        assertTrue(time.isEarlier(15, 10, 10));
+        assertFalse(time.isEarlier(10, 10, 10));
     }
 
     @Test
@@ -85,8 +85,8 @@ public class TimeTest {
         Time laterTime = new Time(15, 14, 15);
         Time earlierTime = new Time(10, 14, 15);
         //Then
-        assertEquals(time.isEarlier(laterTime), true);
-        assertEquals(time.isEarlier(earlierTime), false);
+        assertTrue(time.isEarlier(laterTime));
+        assertFalse(time.isEarlier(earlierTime));
     }
 
 }
