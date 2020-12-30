@@ -1,5 +1,7 @@
-package methodstructure;
+package methodstructure.bodymass;
 
+import methodstructure.bodymass.BmiCategory;
+import methodstructure.bodymass.BodyMass;
 import org.junit.jupiter.api.Test;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;
