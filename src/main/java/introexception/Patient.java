@@ -8,7 +8,6 @@ public class Patient {
     private String socialSecurityNumber;
     private int yearOfBirth;
 
-
     public Patient (String name, String socialSecurityNumber, int yearOfBirth){
         if (name.isEmpty()){
             throw new IllegalArgumentException("Name is empty!");
