@@ -6,12 +6,6 @@ public class SimpleDate {
     private int month;
     private int day;
 
-//    public SimpleDate(int year, int month, int day) {
-//        this.year = year;
-//        this.month = month;
-//        this.day = day;
-//    }
-
     public void setDate(int year, int month, int day){
         if (!isCorrect(year, month, day)){
             throw new IllegalArgumentException("Invalid date: " + year + month + day);
@@ -38,7 +32,7 @@ public class SimpleDate {
             return false;
         }
         int monthLenght = calculateMonthLength(year, month);
-        if ( day < 1 || day > monthLenght){
+        if ( month < 1 || month > monthLenght){
             return false;
         }
         return true;
@@ -52,9 +46,6 @@ public class SimpleDate {
     }
 
     private int calculateMonthLength(int year, int month){
-//        if (month==1 || month==3 || month==5 || month==7 || month==8 || month==10 || month==12){
-//            return 31;
-//        }
         if (month==4 || month==6 || month==9 || month==11){
             return 30;
         }
