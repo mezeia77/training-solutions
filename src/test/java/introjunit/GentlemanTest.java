@@ -7,7 +7,7 @@ import static org.junit.jupiter.api.Assertions.assertEquals;
 public class GentlemanTest {
 
     @Test
-            void byNormalName(){
+    void byNormalName(){
         //Gentleman gentleman = new Gentleman("John Doe");
         String name = "John Doe";
         String greeting = new Gentleman().sayHello(name);
