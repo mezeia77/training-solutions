@@ -8,6 +8,18 @@ public class Lab {
     private boolean completed;
     private LocalDate copletedAt;
 
+    public String getTitle() {
+        return title;
+    }
+
+    public boolean isCompleted() {
+        return completed;
+    }
+
+    public LocalDate getCopletedAt() {
+        return copletedAt;
+    }
+
     public Lab(String title) {
         this.title = title;
         this.completed = false;
@@ -38,15 +50,4 @@ public class Lab {
                 '}';
     }
 
-    public String getTitle() {
-        return title;
-    }
-
-    public boolean isCompleted() {
-        return completed;
-    }
-
-    public LocalDate getCopletedAt() {
-        return copletedAt;
-    }
 }
