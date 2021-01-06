@@ -1,6 +1,7 @@
 package exam02.arrayselector;
 
-import java.util.Arrays;
+import java.util.ArrayList;
+import java.util.List;
 
 public class ArraySelector {
 
@@ -11,20 +12,17 @@ public class ArraySelector {
             return result;
         }
 
-        int[] selectedNumbers = new int[5];
+        List<String> selectedNumbers = new ArrayList<>();
 
         for(int i = 0; i<numbers.length; i+=2){
-            int j = 0;
-            selectedNumbers[j] = numbers[i];
-            j++;
+            Integer temp = numbers[i];
+            selectedNumbers.add(temp.toString());
         }
 
-        result= result + "[";
+        result= result + "[" + selectedNumbers.get(0);
 
-        for(int i = 0; i<selectedNumbers.length; i++){
-            Integer temp = numbers[i];
-
-                result = result + temp.toString();
+        for(int i = 1; i<selectedNumbers.size(); i++){
+                result = result.concat(", ").concat(selectedNumbers.get(i));
         }
         return result + "]";
     }
