@@ -19,9 +19,7 @@ public class GuessTheNumber {
 
                 if (guess<1 || guess>100){
                     System.out.println("Number must be between 1-100!");
-                    if(i>=1){
-                        i--;
-                    }
+                    i--;
                     isNumberBetweenTheLimits = false;
                 }
 
