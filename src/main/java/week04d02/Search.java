@@ -7,10 +7,9 @@ public class Search {
 
     public List<Integer> getIndexesOfChar(String text, char c){
         List<Integer> result = new ArrayList<>();
-        String temp = text.toLowerCase();
 
-        for(int i = 0; i<temp.length(); i++){
-            if(temp.charAt(i) == c){
+        for(int i = 0; i<text.length(); i++){
+            if(text.toLowerCase().charAt(i) == c){
                 result.add(i);
             }
         }
