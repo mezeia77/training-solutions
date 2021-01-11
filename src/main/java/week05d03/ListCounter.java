@@ -19,7 +19,7 @@ public class ListCounter {
         return result;
     }
 
-   /* public static void main(String[] args) {
+   /*public static void main(String[] args) {
         ListCounter listCounter = new ListCounter();
         List<String> input = new ArrayList<>();
         input.add("Valami Amerika");

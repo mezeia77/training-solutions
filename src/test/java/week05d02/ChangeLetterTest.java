@@ -10,7 +10,7 @@ public class ChangeLetterTest {
 
     void ChangeLetters(){
         ChangeLetter changeLetter = new ChangeLetter();
-        assertEquals(changeLetter.changeVowels("vAlami"),"v*l*m*");
+        assertEquals(changeLetter.changeVowels("vAlamiamIbenmindEnfeleBetUvan"),"v*l*m**m*b*nm*nd*nf*l*b*t*v*n");
     }
 
 
