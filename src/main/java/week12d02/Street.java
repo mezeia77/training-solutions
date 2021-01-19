@@ -16,7 +16,7 @@ public class Street {
     }
 
     public int lastSold(){
-        if(sites.size()==0){
+        if(sites.isEmpty()){
             throw new IllegalArgumentException("No site found");
         }
         int result = 0;
