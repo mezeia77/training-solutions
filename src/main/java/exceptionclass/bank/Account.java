@@ -7,7 +7,7 @@ public class Account {
     private double maxSubtract;
 
     public Account(String accountNumber, double balance) {
-        if(accountNumber.isEmpty() || accountNumber==null){
+        if(accountNumber==null || accountNumber.isEmpty()){
             throw new IllegalArgumentException("Invalid account number");
         }
         this.accountNumber = accountNumber;

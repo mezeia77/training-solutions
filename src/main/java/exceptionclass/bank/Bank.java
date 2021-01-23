@@ -1,20 +1,19 @@
 package exceptionclass.bank;
 
-import java.util.ArrayList;
 import java.util.List;
 
 public class Bank {
-    List<Account> accounts = new ArrayList<>();
+    private List<Account> accounts;
 
     public Bank(List<Account> accounts) {
-        if(accounts.isEmpty() || accounts==null){
+        if(accounts==null || accounts.isEmpty()){
             throw new IllegalArgumentException("No accounts");
         }
         this.accounts = accounts;
     }
 
     public Account getAccount(String accountNumber){
-        if(accountNumber.isEmpty() || accountNumber==null){
+        if(accountNumber==null || accountNumber.isEmpty()){
             throw new InvalidBankOperationException(ErrorCode.INVALID_ACCOUNT_NUMBER);
         }
         for (Account account:accounts){

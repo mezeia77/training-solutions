@@ -25,4 +25,11 @@ class BankTest {
         accounts.add(new Account("12345678", 100_000));
         assertThrows(InvalidBankOperationException.class, ()-> bank.getAccount("1234567"));
     }
+
+    @Test
+    void paymentTest(){
+        List<Account> accounts = new ArrayList<>();
+        accounts.add(new Account("12345678", 100_000));
+        Bank bank = new Bank(accounts);
+    }
 }
