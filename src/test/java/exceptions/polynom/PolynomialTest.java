@@ -1,14 +1,18 @@
 package exceptions.polynom;
 
 import exceptions.polinom.Polynomial;
+import org.junit.jupiter.api.BeforeAll;
+import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;
 
 public class PolynomialTest {
 
-//    @Rule
-//    public final ExpectedException exception = ExpectedException.none();
+//    @BeforeAll
+//    void setup() {
+//        final ExpectedException exception = ExpectedException.none();
+//    }
 //
 //    @Test
 //    public void constructorDoubleNullParameterShouldThrowException() throws Exception {
@@ -34,7 +38,7 @@ public class PolynomialTest {
 //        exception.expectCause(instanceOf(NumberFormatException.class));
 //        new Polynomial(coefficientStrs);
 //    }
-
+//
 //    @Test
 //    public void constructorStringShouldConvert() throws Exception {
 //        String[] coefficientStrs = new String[]{"1", "2", "2"};
