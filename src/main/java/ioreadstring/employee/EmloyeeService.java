@@ -9,7 +9,7 @@ import java.util.List;
 public class EmloyeeService {
 
     public static void main(String[] args) {
-        Path file = Path.of("src/main/resources/ioreadstring","employees.txt");
+        Path file = Path.of("src/main/resources/ioreadstring", "ioreader/employees.txt");
         List<String> s = null;
         try {
             s = Files.readAllLines(file, StandardCharsets.UTF_8);
