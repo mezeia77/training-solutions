@@ -18,8 +18,7 @@ class BinaryStringConverterTest {
     void binaryStringToBooleanArrayTest() {
         BinaryStringConverter bsc = new BinaryStringConverter();
         boolean[] expected = new boolean[]{false, true};
-        String data = "01";
-//        assertEquals(expected, bsc.binaryStringToBooleanArray("01"));
+        assertArrayEquals(expected, bsc.binaryStringToBooleanArray("01"));
         assertEquals(2, bsc.binaryStringToBooleanArray("01").length);
     }
 
