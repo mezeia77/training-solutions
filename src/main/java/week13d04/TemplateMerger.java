@@ -19,7 +19,7 @@ public class TemplateMerger {
         String first = line.substring(0, line.indexOf(":")+1);
         String second = line.substring(line.indexOf(","), line.lastIndexOf(":")+1);
 
-        String result = new String();
+        String result = "";
         for(Employee employee:employees){
             result += first + employee.getName() + second + employee.getYearOfBirth() +"\n";
         }
