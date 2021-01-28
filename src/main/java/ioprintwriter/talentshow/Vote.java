@@ -9,7 +9,6 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class Vote {
-    private List<Production> productions = new ArrayList<>();
 
     private List<String> talents = new ArrayList<>();
     private List<Integer> voteList = new ArrayList<>();
@@ -35,7 +34,7 @@ public class Vote {
         }
     }
 
-    private List<Integer> votesList(Path votes){
+    private void votesList(Path votes){
         try (BufferedReader br = Files.newBufferedReader(votes)) {
             String line;
             while((line=br.readLine())!=null){
@@ -44,7 +43,6 @@ public class Vote {
         } catch (IOException e) {
             throw new IllegalArgumentException("File not found", e);
         }
-        return voteList;
     }
 
     private void resultUpLoad(){

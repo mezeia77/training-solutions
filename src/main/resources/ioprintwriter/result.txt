@@ -1,0 +1,13 @@
+1 The_Artists 13
+2 The_Band 8
+3 Motorcycle 14
+4 Bike 10
+5 Stand_Up_Comedian 10
+6 Magician 9
+7 Best_Painter 11
+8 Elvis_Imitator 12
+9 Singer 6
+10 Illusionists 4
+11 Actors_From_Shadow 15
+11 Actors_From_Shadow 15
+Winner: 11 Actors_From_Shadow
