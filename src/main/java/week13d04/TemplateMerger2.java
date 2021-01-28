@@ -7,7 +7,7 @@ import java.util.List;
 
 public class TemplateMerger2 {
 
-    public StringBuilder merge(Path file, List<Employee> employees){
+    public String merge(Path file, List<Employee> employees){
         String line;
         try {
             line = Files.readString(file);
@@ -22,6 +22,6 @@ public class TemplateMerger2 {
             temp2 = temp.replace("{ev}", Integer.toString(employee.getYearOfBirth()));
             result.append(temp2).append("\n");
             }
-        return result;
+        return result.toString();
     }
 }
