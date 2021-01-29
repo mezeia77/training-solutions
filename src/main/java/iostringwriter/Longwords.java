@@ -1,4 +1,4 @@
-package iostringwrites;
+package iostringwriter;
 
 import java.io.IOException;
 import java.io.PrintWriter;

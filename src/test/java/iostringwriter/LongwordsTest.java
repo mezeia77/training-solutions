@@ -1,4 +1,4 @@
-package iostringwrites;
+package iostringwriter;
 
 import org.junit.jupiter.api.Test;
 
