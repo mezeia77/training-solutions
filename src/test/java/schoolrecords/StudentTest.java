@@ -1,4 +1,4 @@
-package scoolrecords;
+package schoolrecords;
 
 import static org.junit.jupiter.api.Assertions.*;
 import org.junit.jupiter.api.Test;
