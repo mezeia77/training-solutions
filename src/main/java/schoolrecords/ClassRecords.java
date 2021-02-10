@@ -1,4 +1,4 @@
-package scoolrecords;
+package schoolrecords;
 
 import java.util.ArrayList;
 import java.util.List;

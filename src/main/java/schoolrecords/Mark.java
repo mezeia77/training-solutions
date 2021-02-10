@@ -1,4 +1,4 @@
-package scoolrecords;
+package schoolrecords;
 
 public class Mark {
 

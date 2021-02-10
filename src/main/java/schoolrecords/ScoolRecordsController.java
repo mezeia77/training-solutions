@@ -1,4 +1,4 @@
-package scoolrecords;
+package schoolrecords;
 
 import java.util.Arrays;
 import java.util.Random;
