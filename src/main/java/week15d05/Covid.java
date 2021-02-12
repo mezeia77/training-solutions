@@ -43,7 +43,9 @@ public class Covid {
         }
     }
 
-    public List<String> findMaxThree(){
+    public List<String> findMaxThree(String filename){
+        readFile(filename);
+        setDataSummarised();
         Map<String, Double> copy= new HashMap<>(dataSummarised);
         List<String> top3Countries = new ArrayList<>();
         for(int i = 0; i< 3; i++) {
@@ -68,9 +70,7 @@ public class Covid {
     }
 
     public static void main(String[] args) {
-        new Covid().readFile("data.csv");
-        new Covid().setDataSummarised();
-        System.out.println(new Covid().findMaxThree());
+        System.out.println(new Covid().findMaxThree("data.csv"));
     }
 }
 
