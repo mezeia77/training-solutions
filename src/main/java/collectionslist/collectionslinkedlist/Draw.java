@@ -17,6 +17,6 @@ public class Draw {
         if(type>=maxNumber){
             throw new IllegalArgumentException("Invalid numbers");
         }
-        return new TreeSet<>(create(maxNumber));
+        return new TreeSet<>(create(maxNumber).subList(0, type));
     }
 }
