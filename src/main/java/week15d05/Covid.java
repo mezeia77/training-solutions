@@ -8,8 +8,8 @@ import java.util.*;
 
 public class Covid {
 
-    private static List<CovidData> data = new ArrayList<>();
-    private static Map<String, Double> dataSummarised = new TreeMap<>();
+    private List<CovidData> data = new ArrayList<>();
+    private Map<String, Double> dataSummarised = new TreeMap<>();
 
     private void readFile(String filename){
         Path file = Path.of("src\\main\\resources\\week15d05"+ "\\" + filename);
