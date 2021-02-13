@@ -1,7 +1,5 @@
 package searching.book;
 
-import java.util.Arrays;
-
 public class BookArraySearch {
 
     private Book[] bookArray;
@@ -30,9 +28,6 @@ public class BookArraySearch {
     }
 
     private boolean isEmpty(String s){
-        if(s==null || "".equals(s.trim())){
-            return true;
-        }
-        return false;
+        return s == null || "".equals(s.trim());
     }
 }
