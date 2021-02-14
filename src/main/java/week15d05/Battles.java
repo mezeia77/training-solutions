@@ -63,7 +63,6 @@ public class Battles {
 
     public static void main(String[] args) {
         new Battles().readFile("battles.dat");
-        System.out.println(houses);
         new Battles().countHouses();
     }
 
