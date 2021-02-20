@@ -39,6 +39,7 @@ public class Quiz {
                 ", topic='" + topic + '\'' +
                 '}';
     }
+
 }
 //    Adott egy vetélkedő kérdésbankja egy fájlban. A fálban az egy kérdéshez tartozó adatok két sorban helyezkednek el.
 //        Első sorban a kérdés, a második sorban a válasz a pontszám és a téma szóközzel elválasztava.
