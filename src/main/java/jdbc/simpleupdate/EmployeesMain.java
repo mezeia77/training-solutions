@@ -1,5 +1,6 @@
-package jdbc;
+package jdbc.simpleupdate;
 
+import org.flywaydb.core.Flyway;
 import org.mariadb.jdbc.MariaDbDataSource;
 
 import java.sql.*;
@@ -14,6 +15,9 @@ public class EmployeesMain {
         dataSource.setUrl("jdbc:mariadb://localhost:3306/employees?useUnicode=true");
         dataSource.setUser("employees");
         dataSource.setPassword("employees");
+        Flyway flyway = Flyway.configure().dataSource(dataSource).load();
+        flyway.clean();
+        flyway.migrate();
     }
 
     public void insert() throws SQLException {
@@ -78,8 +82,10 @@ public class EmployeesMain {
 
 
     public static void main(String[] args) throws SQLException {
+        new EmployeesMain().prepare();
 //        new EmployeesMain().insert();
-        new EmployeesMain().select();
+//        new EmployeesMain().select();
 //        new EmployeesMain().findById();
+
     }
 }

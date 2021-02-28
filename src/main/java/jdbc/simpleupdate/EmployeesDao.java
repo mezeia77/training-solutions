@@ -1,4 +1,4 @@
-package jdbc;
+package jdbc.simpleupdate;
 
 import org.flywaydb.core.api.callback.Statement;
 import org.flywaydb.core.internal.database.base.Connection;
@@ -9,11 +9,11 @@ import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.util.List;
 
-public class EmployeeDao {
+public class EmployeesDao {
 
     private DataSource dataSource;
 
-    public EmployeeDao(DataSource dataSource) {
+    public EmployeesDao(DataSource dataSource) {
         this.dataSource = dataSource;
     }
 
