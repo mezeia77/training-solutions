@@ -16,10 +16,10 @@ public class EmployeesMain {
         dataSource.setPassword("employees");
     }
 
-    public void insert(){
-        try {
-            prepare();
-            Connection conn = dataSource.getConnection();
+    public void insert() throws SQLException {
+        prepare();
+        try (Connection conn = dataSource.getConnection()){
+
 //            Statement stmt = conn.createStatement();
 //            stmt.executeUpdate("insert into employees(emp_name) values ('John Doe')");
             PreparedStatement stmt = conn.prepareStatement("insert into employees(emp_name) values (?)");
@@ -38,6 +38,7 @@ public class EmployeesMain {
             Statement stmt = conn.createStatement();
             ResultSet rs = stmt.executeQuery("select emp_name from employees");
         ){
+
             List<String> names = new ArrayList<>();
             while ((rs.next())){
              String name = rs.getString("emp_name");
@@ -69,6 +70,7 @@ public class EmployeesMain {
             if(rs.next()){
                 String name = rs.getString("emp_name");
                 System.out.println(name);
+                return;
             }
             throw new IllegalArgumentException("Not found");
         }
@@ -76,8 +78,8 @@ public class EmployeesMain {
 
 
     public static void main(String[] args) throws SQLException {
-//        new EmployeesMain().insert();
-//        new EmployeesMain().select();
+        new EmployeesMain().insert();
+        new EmployeesMain().select();
         new EmployeesMain().findById();
     }
 }
