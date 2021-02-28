@@ -11,18 +11,19 @@ public class EmployeesMain {
     MariaDbDataSource dataSource = new MariaDbDataSource();
 
     private void prepare() throws SQLException {
-        dataSource.setUrl("jdbc:mariadb://localhost:3306/employees?useUnicode=true");
+//        dataSource.setUrl("jdbc:mariadb://localhost:3306/employees?useUnicode=true"); /*kisgép*/
+        dataSource.setUrl("jdbc:mariadb://localhost:3307/employees?useUnicode=true"); /*nagygép*/
         dataSource.setUser("employees");
         dataSource.setPassword("employees");
     }
 
-    public void insert(){
-        try {
-            prepare();
-            Connection conn = dataSource.getConnection();
+    public void insert() throws SQLException {
+        prepare();
+        try (
+             Connection conn = dataSource.getConnection();
 //            Statement stmt = conn.createStatement();
 //            stmt.executeUpdate("insert into employees(emp_name) values ('John Doe')");
-            PreparedStatement stmt = conn.prepareStatement("insert into employees(emp_name) values (?)");
+             PreparedStatement stmt = conn.prepareStatement("insert into employees(emp_name) values (?)")){
             stmt.setString(1, "Jack Doe");
             stmt.executeUpdate();
         }
@@ -40,8 +41,10 @@ public class EmployeesMain {
         ){
             List<String> names = new ArrayList<>();
             while ((rs.next())){
-             String name = rs.getString("emp_name");
-             names.add(name);
+//             String name = rs.getString("emp_name");
+             names.add(rs.getString("emp_name"));
+//             long id = rs.getLong("id");
+//             System.out.println(id);
             }
             System.out.println(names);
         } catch (SQLException se) {
@@ -76,8 +79,8 @@ public class EmployeesMain {
 
 
     public static void main(String[] args) throws SQLException {
-//        new EmployeesMain().insert();
-//        new EmployeesMain().select();
+        new EmployeesMain().insert();
+        new EmployeesMain().select();
         new EmployeesMain().findById();
     }
 }
