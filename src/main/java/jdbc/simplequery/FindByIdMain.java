@@ -3,8 +3,6 @@ package jdbc.simplequery;
 import org.mariadb.jdbc.MariaDbDataSource;
 
 import java.sql.*;
-import java.util.ArrayList;
-import java.util.List;
 
 public class FindByIdMain {
 

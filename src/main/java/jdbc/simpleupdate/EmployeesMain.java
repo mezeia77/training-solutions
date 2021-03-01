@@ -12,12 +12,12 @@ public class EmployeesMain {
     MariaDbDataSource dataSource = new MariaDbDataSource();
 
     private void prepare() throws SQLException {
-        dataSource.setUrl("jdbc:mariadb://localhost:3306/employees?useUnicode=true");
+        dataSource.setUrl("jdbc:mariadb://localhost:3307/employees?useUnicode=true");//nagygép
         dataSource.setUser("employees");
         dataSource.setPassword("employees");
-        Flyway flyway = Flyway.configure().dataSource(dataSource).load();
-        flyway.clean();
-        flyway.migrate();
+//        Flyway flyway = Flyway.configure().dataSource(dataSource).load();
+//        flyway.clean();
+//        flyway.migrate();
     }
 
     public void insert() throws SQLException {
