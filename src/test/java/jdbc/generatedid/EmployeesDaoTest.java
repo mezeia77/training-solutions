@@ -1,27 +1,22 @@
-package jdbc.architecture;
+package jdbc.generatedid;
 
 import org.flywaydb.core.Flyway;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 import org.mariadb.jdbc.MariaDbDataSource;
 
-import javax.sql.DataSource;
-
 import java.sql.SQLException;
-import java.util.Arrays;
-import java.util.List;
 
 import static org.junit.jupiter.api.Assertions.*;
 
 class EmployeesDaoTest {
-
-    EmployeesDao dao;
-
+    EmployeesDao employeesDao;
     @BeforeEach
     void init(){
+
         MariaDbDataSource dataSource = new MariaDbDataSource();
+        //        dataSource.setUrl("jdbc:mariadb://localhost:3306/employees?useUnicode=true"); //kisgép
         try {
-//        dataSource.setUrl("jdbc:mariadb://localhost:3306/employees?useUnicode=true"); //kisgép
             dataSource.setUrl("jdbc:mariadb://localhost:3307/employees?useUnicode=true"); //nagygép
             dataSource.setUser("employees");
             dataSource.setPassword("employees");
@@ -32,14 +27,17 @@ class EmployeesDaoTest {
         flyway.clean();
         flyway.migrate();
 
-        dao = new EmployeesDao(dataSource);
+        employeesDao = new EmployeesDao(dataSource);
     }
 
     @Test
-    void testInsert(){
-        dao.createEmployee("John Doe");
-        assertEquals(1, dao.listEmployeeNames().size());
-        assertEquals(List.of("John Doe"), dao.listEmployeeNames());
+    void testById(){
+        long id = employeesDao.createEmployee("Jack Doe");
+        System.out.println(id);
+        id = employeesDao.createEmployee("Jane Doe");
+        System.out.println(id);
+        String name = employeesDao.findEmployeeNameById(id);
+        assertEquals("Jane Doe", name);
     }
 
 }
