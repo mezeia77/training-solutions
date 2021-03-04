@@ -5,6 +5,7 @@ import java.time.temporal.TemporalAmount;
 
 public class Citizen {
 
+    private int id;
     private String fullName;
     private String ZIP;
     private int year_of_birth;
@@ -12,6 +13,10 @@ public class Citizen {
     private String email;
     private int numberOfVaccination;
     private LocalDate lastVaccination;
+
+    public Citizen(String TAJ) {
+        this.TAJ = TAJ;
+    }
 
     public Citizen(String fullName, String ZIP, int year_of_birth, String TAJ) {
         this.fullName = fullName;
@@ -29,7 +34,8 @@ public class Citizen {
         this.email = email;
     }
 
-    public Citizen(String fullName, String ZIP, int year_of_birth, String TAJ, String email, int numberOfVaccination, LocalDate lastVaccination) {
+    public Citizen(int id, String fullName, String ZIP, int year_of_birth, String TAJ, String email, int numberOfVaccination, LocalDate lastVaccination) {
+        this.id = id;
         this.fullName = fullName;
         this.ZIP = ZIP;
         this.year_of_birth = year_of_birth;
@@ -37,6 +43,10 @@ public class Citizen {
         this.email = email;
         this.numberOfVaccination = numberOfVaccination;
         this.lastVaccination = lastVaccination;
+    }
+
+    public int getId() {
+        return id;
     }
 
     public String getFullName() {
@@ -70,7 +80,8 @@ public class Citizen {
     @Override
     public String toString() {
         return "Citizen{" +
-                "fullName='" + fullName + '\'' +
+                "id=" + id +
+                ", fullName='" + fullName + '\'' +
                 ", ZIP='" + ZIP + '\'' +
                 ", year_of_birth=" + year_of_birth +
                 ", TAJ='" + TAJ + '\'' +
@@ -79,4 +90,5 @@ public class Citizen {
                 ", lastVaccination=" + lastVaccination +
                 '}';
     }
+
 }

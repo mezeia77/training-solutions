@@ -1,9 +1,7 @@
 package vaccination;
 
-import org.flywaydb.core.Flyway;
 import org.mariadb.jdbc.MariaDbDataSource;
 
-import javax.sound.midi.Soundbank;
 import java.sql.SQLException;
 import java.util.Scanner;
 
@@ -16,9 +14,6 @@ public class VaccinationMain {
             dataSource.setUrl("jdbc:mariadb://localhost:3306/vaccination?useUnicode=true");
             dataSource.setUser("root");
             dataSource.setPassword("12345");
-//            Flyway flyway = Flyway.configure().dataSource(dataSource).load();
-//            flyway.clean();
-//            flyway.migrate();
         } catch (SQLException sqlException) {
             throw new IllegalStateException("Connection failed", sqlException);
         }
@@ -27,9 +22,8 @@ public class VaccinationMain {
                 "1 - Regisztráció" + "\n"+
                         "2 - Tömeges regisztráció" + "\n"+
                         "3 - Generálás" + "\n"+
-                        "4 - Oltás" + "\n"+
+                        "4 - Oltás / oltás meghiúsulás" + "\n"+
                         "5 - Riport" + "\n"+
-                        "0 - Kilépés" + "\n"+
                 "Kérem válasszon" + "\n");
         Scanner scanner = new Scanner(System.in);
         int select = scanner.nextInt();
@@ -38,7 +32,9 @@ public class VaccinationMain {
         switch (select){
             case 1:new Registration().requestDataFromUser(dataSource); return;
             case 2:new Registration().massRegistration(dataSource); return;
-            case 0: break;
+            case 3:new Generate().generateListForVaccination(dataSource); return;
+            case 4:new Vaccination().addVaccination(dataSource); return;
+            case 5:new RiportByZip().riportByZip(dataSource); return;
         }
 
         System.out.println(new CitizensDAO(dataSource).listAllCitizens());

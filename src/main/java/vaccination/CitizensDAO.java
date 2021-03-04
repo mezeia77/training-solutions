@@ -1,6 +1,7 @@
 package vaccination;
 
-import javax.sql.DataSource;
+import org.mariadb.jdbc.MariaDbDataSource;
+
 import java.sql.*;
 import java.time.LocalDate;
 import java.util.ArrayList;
@@ -8,9 +9,9 @@ import java.util.List;
 
 public class CitizensDAO {
 
-    private DataSource dataSource;
+    private MariaDbDataSource dataSource;
 
-    public CitizensDAO(DataSource dataSource) {
+    public CitizensDAO(MariaDbDataSource dataSource) {
         this.dataSource = dataSource;
     }
 
@@ -44,6 +45,7 @@ public class CitizensDAO {
         try (ResultSet rs = statement.executeQuery()) {
             while (rs.next()) {
                 Citizen citizen = new Citizen(
+                        rs.getInt("id"),
                         rs.getString("citizen_name"),
                         rs.getString("ZIP"),
                         rs.getInt("year_of_birth"),
@@ -56,6 +58,18 @@ public class CitizensDAO {
             return result;
         } catch (SQLException sqlException) {
             throw new IllegalStateException("Cannot execute", sqlException);
+        }
+    }
+
+    public void updateCitizenByVaccination(int id, LocalDate date, int number_of_vaccination){
+        try (Connection conn =  dataSource.getConnection();
+             PreparedStatement stmt = conn.prepareStatement("update citizens set number_of_vaccination=?, last_vaccination=? where id = ?")){
+            stmt.setInt(1, number_of_vaccination);
+            stmt.setDate(2,Date.valueOf(date));
+            stmt.setInt(3, id);
+            stmt.executeUpdate();
+        } catch (SQLException se){
+            throw new IllegalStateException("Can't update", se);
         }
     }
 
