@@ -1,6 +1,6 @@
 package activity;
 
-public class ActivityWithTrack {
+public class ActivityWithTrack implements Activity{
 
     private ActivityType activityType;
     private Track track;

@@ -1,11 +1,19 @@
 package activity;
 
+import java.io.BufferedReader;
+import java.io.IOException;
+import java.io.InputStream;
+import java.io.InputStreamReader;
 import java.util.ArrayList;
 import java.util.List;
 
 public class Track {
 
     private List<TrackPoint> trackPoints = new ArrayList<>();
+    public static final int LAT_START_INDEX = 15;
+    public static final int LAT_END_INDEX = 25;
+    public static final int LON_START_INDEX = 32;
+    public static final int LON_END_INDEX = 42;
 
     public Track(List<TrackPoint> trackPoints) {
         this.trackPoints = trackPoints;
@@ -93,5 +101,35 @@ public class Track {
         return "Track{" +
                 "trackPoints=" + trackPoints +
                 '}';
+    }
+
+    public void loadFromGpx(InputStream is) {
+        List<TrackPoint> tpl = new ArrayList<>();
+        BufferedReader br = new BufferedReader(new InputStreamReader(is));
+        String line;
+        Coordinate cord = null;
+        try {
+            while ((line = br.readLine()) != null) {
+                if(line.trim().startsWith("<trkpt")) {
+                    cord = parseCoordinate(line);
+                }
+                if (line.trim().startsWith("<ele>")) {
+                    tpl.add(new TrackPoint(cord,parseElevation(line)));
+                }
+            }
+        } catch (IOException e) {
+            throw new IllegalStateException("Cannot read file",e);
+        }
+        trackPoints = tpl;
+    }
+
+    private double parseElevation(String line) {
+        return Double.parseDouble(line.substring(9,14));
+    }
+
+    private Coordinate parseCoordinate(String line) {
+        double lat= Double.parseDouble(line.substring(LAT_START_INDEX, LAT_END_INDEX));
+        double lon= Double.parseDouble(line.substring(LON_START_INDEX, LON_END_INDEX));
+        return new Coordinate(lat,lon);
     }
 }
