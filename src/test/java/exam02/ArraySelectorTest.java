@@ -1,5 +1,6 @@
-package exam02.arrayselector;
+package exam02;
 
+import exam02.arrayselector.ArraySelector;
 import org.junit.jupiter.api.Test;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;
