@@ -13,8 +13,6 @@ public class Project {
 
     @Override
     public String toString() {
-        return "Project{" +
-                "name='" + name + '\'' +
-                '}';
+        return name;
     }
 }

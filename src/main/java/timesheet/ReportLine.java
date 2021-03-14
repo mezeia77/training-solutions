@@ -17,7 +17,15 @@ public class ReportLine {
         return time;
     }
 
-    public long addTime(int i) {
+    public long addTime(long i) {
         return time+=i;
+    }
+
+    @Override
+    public String toString() {
+        return "ReportLine{" +
+                "project=" + project +
+                ", time=" + time +
+                '}';
     }
 }
