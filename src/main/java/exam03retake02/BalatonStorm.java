@@ -16,7 +16,6 @@ public class BalatonStorm {
                     String s = line.substring(16, line.lastIndexOf("\""));
                     data.add(s);
                 }
-
                 if(line.contains("level")) {
                     String s = line.substring(line.length()-2, line.length()-1);
                     data.add(s);
