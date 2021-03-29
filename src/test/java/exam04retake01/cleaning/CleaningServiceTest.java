@@ -1,6 +1,5 @@
 package exam04retake01.cleaning;
 
-import meetingrooms.Office;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 

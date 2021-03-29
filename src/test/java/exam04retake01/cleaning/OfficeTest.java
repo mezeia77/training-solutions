@@ -2,6 +2,8 @@ package exam04retake01.cleaning;
 
 import org.junit.jupiter.api.Test;
 
+import static org.junit.jupiter.api.Assertions.assertEquals;
+
 public class OfficeTest {
     @Test
     void create() {
