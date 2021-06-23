@@ -10,7 +10,7 @@ import static org.junit.jupiter.api.Assertions.*;
 class SocialNetworkTest {
 
     @Test
-    public void testCreateMember() {
+    void testCreateMember() {
         Member member = new Member("John Doe", List.of("Java", "OOP"), Sex.MALE);
         assertEquals("John Doe", member.getName());
         assertEquals(List.of("Java", "OOP"), member.getSkills());
@@ -18,7 +18,7 @@ class SocialNetworkTest {
     }
 
     @Test
-    public void testFindFirst() {
+    void testFindFirst() {
         SocialNetwork socialNetwork = new SocialNetwork(List.of(
                 new Member("John Doe", List.of("Java", "OOP"), Sex.MALE),
                 new Member("Jane Doe", List.of(".NET", "OOP"), Sex.FEMALE),
@@ -31,7 +31,7 @@ class SocialNetworkTest {
     }
 
     @Test
-    public void testAvg() {
+    void testAvg() {
         assertFalse(new SocialNetwork(Collections.emptyList()).averageNumberOfSkills().isPresent());
 
         SocialNetwork socialNetwork = new SocialNetwork(List.of(
